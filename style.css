@@ -4,11 +4,12 @@
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
   width: 100%;
-  min-height: 210vh;
+  min-height: 110vh;
 }
 
 header {
@@ -61,19 +62,128 @@ header.active a {
 }
 
 .home {
-  position: relative;
-  background: url("images/background.png") no-repeat;
-  background-size: cover;
-  background-position: 80px;
-  background-color: black;
-  background-attachment: fixed;
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(#000 40%, #222f3e, #576574);
 }
 
-.home .bubble {
+.content {
   position: fixed;
-  top: 200px;
-  right: 200px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content img {
+  min-width: 500px;
+  margin-right: 100px;
+}
+
+.content .bubble {
+  position: relative;
   background: white;
+  min-width: 374px;
+  padding: 30px 50px;
+  border-radius: 20px;
+}
+
+.content .bubble::before {
+  content: "";
+  position: absolute;
+  right: 99%;
+  top: 30px;
+  border-top: 13px solid transparent;
+  border-right: 150px solid white;
+  border-bottom: 13px solid transparent;
+}
+
+.content .bubble .introduction {
+  font-size: 1.1em;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+.content .bubble .introduction span {
+  font-size: 3em;
+}
+
+.content .bubble .species-container {
+  height: 43px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.content .bubble .species-container .species {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #4e9eff;
+  font-size: 2em;
+  font-weight: 700;
+  animation: slide 5s ease infinite alternate;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(0px);
+  }
+  10% {
+    transform: translateY(0px);
+  }
+  32% {
+    transform: translateY(-42px);
+  }
+  54% {
+    transform: translateY(-84px);
+  }
+  76% {
+    transform: translateY(-126px);
+  }
+  100% {
+    transform: translateY(-168px);
+  }
+}
+
+.content .bubble .btn {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.content .bubble .btn span {
+  font-size: 1em;
+  background: #54a0ff;
+  padding: 7px 15px;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.content .bubble .btn span:active {
+  background: #2e86de;
+}
+
+.content .bubble .media-icons {
+  text-align: center;
+}
+
+.content .bubble .media-icons a:not(:last-child) {
+  margin-right: 20px;
+}
+
+.content .bubble .media-icons a i {
+  font-size: 1.4em;
+  color: blue;
+
+  transition: 0.3s ease;
+}
+
+.content .bubble .media-icons a i:hover {
+  transform: scale(1.1);
 }
