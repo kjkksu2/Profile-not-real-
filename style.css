@@ -62,16 +62,17 @@ header.active a {
 }
 
 .home {
+  position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: radial-gradient(#000 40%, #222f3e, #576574);
+  overflow: hidden;
 }
 
-.content {
-  position: fixed;
+.home__content {
   width: 100%;
   height: 100%;
   display: flex;
@@ -79,12 +80,12 @@ header.active a {
   align-items: center;
 }
 
-.content img {
+.home__content img {
   min-width: 500px;
   margin-right: 100px;
 }
 
-.content .bubble {
+.home__content .bubble {
   position: relative;
   background: white;
   min-width: 374px;
@@ -92,7 +93,7 @@ header.active a {
   border-radius: 20px;
 }
 
-.content .bubble::before {
+.home__content .bubble::before {
   content: "";
   position: absolute;
   right: 99%;
@@ -102,23 +103,23 @@ header.active a {
   border-bottom: 13px solid transparent;
 }
 
-.content .bubble .introduction {
+.home__content .bubble .introduction {
   font-size: 1.1em;
   font-weight: 900;
   margin-bottom: 30px;
 }
 
-.content .bubble .introduction span {
+.home__content .bubble .introduction span {
   font-size: 3em;
 }
 
-.content .bubble .species-container {
+.home__content .bubble .species-container {
   height: 43px;
   overflow: hidden;
   margin-bottom: 30px;
 }
 
-.content .bubble .species-container .species {
+.home__content .bubble .species-container .species {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -149,14 +150,14 @@ header.active a {
   }
 }
 
-.content .bubble .btn {
+.home__content .bubble .btn {
   display: flex;
   justify-content: center;
   text-transform: uppercase;
   text-decoration: none;
 }
 
-.content .bubble .btn span {
+.home__content .bubble .btn a {
   font-size: 1em;
   background: #54a0ff;
   padding: 7px 15px;
@@ -165,25 +166,389 @@ header.active a {
   margin-bottom: 30px;
 }
 
-.content .bubble .btn span:active {
+.home__content .bubble .btn span:active {
   background: #2e86de;
 }
 
-.content .bubble .media-icons {
+.home__content .bubble .media-icons {
   text-align: center;
 }
 
-.content .bubble .media-icons a:not(:last-child) {
+.home__content .bubble .media-icons a:not(:last-child) {
   margin-right: 20px;
 }
 
-.content .bubble .media-icons a i {
+.home__content .bubble .media-icons a i {
   font-size: 1.4em;
   color: blue;
 
   transition: 0.3s ease;
 }
 
-.content .bubble .media-icons a i:hover {
+.home__content .bubble .media-icons a i:hover {
   transform: scale(1.1);
+}
+
+.about {
+  z-index: 888;
+  padding: 80px 200px;
+  background: white;
+}
+
+.title {
+  position: relative;
+  font-size: 3em;
+  font-weight: 800;
+  text-align: center;
+  color: #00a8ff;
+  margin-bottom: 100px;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 180px;
+  height: 5px;
+  background: #00a8ff;
+  transform: translateX(-50%);
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #00a8ff;
+  transform: translateX(-50%);
+}
+
+.about__content {
+  display: flex;
+}
+
+.about__content img {
+  width: 500px;
+  max-height: 300px;
+  border-radius: 20px;
+  margin-right: 50px;
+}
+
+.about__content .text span {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.about__content .text p {
+  margin-top: 20px;
+  line-height: 140%;
+}
+
+.skills {
+  background: black;
+  padding: 80px 200px;
+}
+
+.skils__content {
+  display: flex;
+}
+
+.skils__content .text {
+  width: 60%;
+  margin-right: 100px;
+  color: white;
+}
+
+.skils__content .text h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.skils__content .text p:nth-child(8) {
+  margin-bottom: 30px;
+}
+
+.skils__content .text a {
+  padding: 10px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: white;
+  background: #265cdd;
+}
+
+.graph-container {
+  width: 40%;
+  color: white;
+}
+
+.graph-container .graph {
+  padding: 20px;
+}
+
+.graph-container .graph .graph-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.graph-container .graph .graph-element span {
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+.graph-container .graph .graph-image {
+  display: block;
+  width: 100%;
+  height: 20px;
+  background: #cccbd0;
+  border-radius: 2px;
+}
+
+.graph-container .graph .graph-image .potty {
+  display: block;
+  width: 95%;
+  height: 100%;
+  background: #fc581b;
+  border-radius: 2px;
+}
+
+.graph-container .graph .graph-image .hand {
+  display: block;
+  width: 80%;
+  height: 100%;
+  background: #026dc7;
+  border-radius: 2px;
+}
+
+.graph-container .graph .graph-image .sit {
+  display: block;
+  width: 90%;
+  height: 100%;
+  background: #eea119;
+  border-radius: 2px;
+}
+
+.graph-container .graph .graph-image .bark {
+  display: block;
+  width: 75%;
+  height: 100%;
+  background: #14b462;
+  border-radius: 2px;
+}
+
+.graph-container .graph .roll {
+  display: block;
+  width: 60%;
+  height: 100%;
+  background: #536495;
+  border-radius: 2px;
+}
+
+.service {
+  padding: 100px 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service p {
+  width: 80%;
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 70px;
+}
+
+.service .card-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.service .card-container .card {
+  width: 315px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 5px 25px rgb(1 1 1 / 10%);
+  padding: 40px;
+  margin-bottom: 20px;
+  color: #2d6afd;
+}
+
+.service .card-container .card:not(:last-child) {
+  margin-right: 20px;
+}
+
+.service .card-container .card i {
+  font-size: 5em;
+  margin-bottom: 20px;
+  transition: 0.25s ease;
+}
+
+.service .card-container .card:hover i {
+  animation: upAndDown 0.5s ease infinite alternate;
+  animation-delay: 0.25s;
+  transform: translateY(-5px);
+}
+
+.service .card-container .card span {
+  font-size: 2em;
+}
+
+.photo {
+  background: black;
+  padding: 100px 200px;
+}
+
+.photo-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.photo-container .photo-box {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.photo-container .photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.photo-container .photo-box img:hover {
+  transform: scale(1.2);
+}
+
+.contact {
+  padding: 100px 200px;
+}
+
+.contact .card-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.contact .card-container .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 5px 25px rgb(1 1 1 / 20%);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.contact .card-container .card i {
+  font-size: 4em;
+  color: #2d6afd;
+  margin-bottom: 20px;
+  transition: 0.25s ease;
+}
+
+.contact .card-container .card:hover i {
+  animation: upAndDown 0.5s ease infinite alternate;
+  animation-delay: 0.25s;
+  transform: translateY(-5px);
+}
+
+@keyframes upAndDown {
+  from {
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(5px);
+  }
+}
+
+.contact .card-container .card span:nth-child(2) {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.contact .card-container .card span:last-child {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+}
+
+.contact .message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact .message .message-box {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+  border-radius: 20px;
+}
+
+.contact .message .message-box .header {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.contact .message .message-box input,
+.contact .message .message-box textarea {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  padding: 5px;
+  resize: none;
+}
+
+.contact .message .message-box input[type="submit"] {
+  margin-bottom: 0px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #154bc8;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+footer {
+  background: black;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+footer span {
+  display: block;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+footer p a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #00a8ff;
 }
