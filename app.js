@@ -4,3 +4,10 @@ window.addEventListener("scroll", () => {
 
   header.classList.toggle("active", window.scrollY > 50);
 });
+
+// Home Content
+const homeContent = document.querySelector(".home__content");
+
+window.addEventListener("scroll", () => {
+  homeContent.style.transform = "translateY(" + 0.5 * window.scrollY + "px)";
+});
